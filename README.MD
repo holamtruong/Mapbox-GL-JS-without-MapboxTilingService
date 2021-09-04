@@ -10,7 +10,7 @@ In December 2020, the Mapbox GL JS license change sent shock waves through the w
 
  Thanks for the idea from the article: https://markallengis.medium.com/simple-web-map-using-mapbox-gl-js-a44e583e0589
 
- [DEMO HERE](https://holamtruong.github.io/mapbox-gl-js-without-accesstoken/)
+ [DEMO HERE](https://holamtruong.github.io/mapbox-gl-js-without-paying)
 
 
 ![](https://github.com/holamtruong/mapbox-gl-js-without-accesstoken/blob/master/demo2.PNG?raw=true)
