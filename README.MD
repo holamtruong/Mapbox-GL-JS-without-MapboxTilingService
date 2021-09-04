@@ -33,6 +33,7 @@ In December 2020, the Mapbox GL JS license change sent shock waves through the w
                     'raster-tiles': {
                         'type': 'raster',
                         'tiles': [
+                        // Add a third party tile server:
                             'https://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}'
                         ],
                         'tileSize': 256,
