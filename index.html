@@ -1,49 +1,67 @@
-<script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet' />
+<html>
 
-<style>
-    #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 100%;
-    }
-</style>
-
-
-<div id='map'></div>
-<script>
-
-    /*
-      mapboxgl.accessToken =
-        'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
-    */
-
-    var map = new mapboxgl.Map({
-        container: 'map',
-        //style: 'mapbox://styles/mapbox/streets-v9',
-        center: [106.3705298, 10.2338635],
-        zoom: 15,
-        style: {
-            'version': 8,
-            'sources': {
-                'raster-tiles': {
-                    'type': 'raster',
-                    'tiles': [
-                        //'https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg'
-                        'https://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}'
-                    ],
-                    'tileSize': 256,
-                }
-            },
-            'layers': [{
-                'id': 'simple-tiles',
-                'type': 'raster',
-                'source': 'raster-tiles',
-                'minzoom': 0,
-                'maxzoom': 22
-            }]
+<head>
+    <meta charset="utf-8">
+    <title>Display map navigation controls</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
         }
-    });
 
-</script>
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+
+
+    <script>
+
+        // accessToken
+        mapboxgl.accessToken =
+            'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            // Remove the Mapbox Vector Tiles API serves vector tiles
+            //style: 'mapbox://styles/mapbox/streets-v9',
+            center: [106.3705298, 10.2338635],
+            zoom: 15,
+            style: {
+                'version': 8,
+                'sources': {
+                    'raster-tiles': {
+                        'type': 'raster',
+                        'tiles': [
+                            //'https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg'
+                            'https://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}'
+                        ],
+                        'tileSize': 256,
+                    }
+                },
+                'layers': [{
+                    'id': 'simple-tiles',
+                    'type': 'raster',
+                    'source': 'raster-tiles',
+                    'minzoom': 0,
+                    'maxzoom': 22
+                }]
+            }
+        });
+
+
+        // Add zoom , rotation, fullscreen controls to the map.
+        map.addControl(new mapboxgl.NavigationControl());
+        map.addControl(new mapboxgl.FullscreenControl({ container: document.querySelector('body') }));
+    </script>
