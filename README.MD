@@ -13,7 +13,7 @@
  
 
 
-![](https://github.com/holamtruong/mapbox-gl-js-without-accesstoken/blob/master/demo.PNG?raw=true)
+![](https://github.com/holamtruong/mapbox-gl-js-without-accesstoken/blob/master/demo2.PNG?raw=true)
 
 
 ```js
