@@ -23,7 +23,7 @@
 
         var map = new mapboxgl.Map({
             container: 'map',
-            // Remove mapbox style URL
+            // Remove the Mapbox Vector Tiles API serves vector tiles
             //style: 'mapbox://styles/mapbox/streets-v9',
             center: [106.3705298, 10.2338635],
             zoom: 15,
@@ -33,7 +33,6 @@
                     'raster-tiles': {
                         'type': 'raster',
                         'tiles': [
-                            //'https://stamen-tiles.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg'
                             'https://mt0.google.com/vt/lyrs=p&hl=en&x={x}&y={y}&z={z}'
                         ],
                         'tileSize': 256,
