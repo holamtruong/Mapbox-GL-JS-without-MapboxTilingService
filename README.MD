@@ -3,6 +3,8 @@ Thanks for the idea from the article: https://markallengis.medium.com/simple-web
 
 [DEMO HERE](https://holamtruong.github.io/mapbox-gl-js-without-accesstoken/)
 
+![](https://github.com/holamtruong/mapbox-gl-js-without-accesstoken/blob/master/demo.PNG?raw=true)
+
 
 ```js
     var map = new mapboxgl.Map({
